@@ -1,10 +1,8 @@
 from django.shortcuts import get_object_or_404
 from django.db.models import Avg
-from django.db import IntegrityError
 from django_filters.rest_framework import DjangoFilterBackend
 
-from rest_framework.exceptions import ParseError
-from rest_framework import viewsets, filters, generics, mixins
+from rest_framework import viewsets, filters, mixins
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from api.serializers import (
@@ -17,11 +15,10 @@ from api.serializers import (
     TitleWriteSerializer,
 )
 
-from api.models import Category, Genre, Title, Comment, Review, User
+from api.models import Category, Genre, Title, Review, User
 
 from api.permissions import IsOwnerOrReadOnly
-from api.permissions import AdminResourcePermission, \
-    SiteAdminPermission, StaffResourcePermission, ReviewCreatePermission
+from api.permissions import AdminResourcePermission, SiteAdminPermission
 
 from api.filters import TitleFilter
 

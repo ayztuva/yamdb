@@ -31,13 +31,13 @@ class StaffResourcePermission(BasePermission):
 
 
 class IsOwnerOrReadOnly(BasePermission):
-    """ 
-    Custom permission to only allow owners of an object to edit it. 
+    """
+    Custom permission to only allow owners of an object to edit it.
     """
 
     def has_object_permission(self, request, view, obj):
-        # Read permissions are allowed to any request, 
-        # so we'll always allow GET, HEAD or OPTIONS requests. 
+        # Read permissions are allowed to any request,
+        # so we'll always allow GET, HEAD or OPTIONS requests.
         if request.method in permissions.SAFE_METHODS:
             return True
 
@@ -49,10 +49,12 @@ class SiteAdminPermission(permissions.BasePermission):
     def has_permission(self, request, obj):
 
         if request.method == 'GET':
-            return request.user.is_authenticated or not request.user.is_authenticated
+            return request.user.is_authenticated \
+                or not request.user.is_authenticated
         if not request.user or not request.user.is_authenticated:
             return False
         if request.method == 'POST':
             return request.user.is_authenticated
 
-        return request.user.is_superuser or request.user.is_admin or request.user.is_moderator
+        return request.user.is_superuser \
+            or request.user.is_admin or request.user.is_moderator

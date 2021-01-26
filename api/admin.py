@@ -1,6 +1,5 @@
 from django.contrib import admin
 from api.models import Category, Genre, Title, Comment, Review
-from django.apps import apps
 
 
 class CommentAdmin(admin.ModelAdmin):
