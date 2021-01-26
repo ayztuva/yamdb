@@ -8,7 +8,7 @@ on:
 
 jobs:
   tests:
-    name: Check for flake8
+    name: Run project test
     runs-on: ubuntu-latest
 
     steps:
@@ -28,6 +28,9 @@ jobs:
 
     - name: Lint with flake8
       run: flake8 .
+
+    - name: Test with pytest
+      run: pytest tests.py
   
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
