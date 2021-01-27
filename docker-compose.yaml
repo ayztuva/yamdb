@@ -3,6 +3,7 @@ version: '3.8'
 volumes:
   postgres_data:
   staticfiles:
+  media:
 
 services:
   db:
@@ -16,8 +17,7 @@ services:
     image: ayztuva/yamdb
     volumes:
       - staticfiles:/code/static
-    ports:
-      - "8000:8000"
+      - media:/code/media
     restart: always
     depends_on:
       - db

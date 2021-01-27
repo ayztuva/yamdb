@@ -74,7 +74,7 @@ jobs:
           script: |
             sudo docker pull ayztuva/yamdb
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 ayztuva/yamdb
+            sudo docker-compose up
   
   send_message:
     name: Sending results to Telegram Bot
