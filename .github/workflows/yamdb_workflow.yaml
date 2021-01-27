@@ -69,10 +69,10 @@ jobs:
           source: "docker-compose.yaml, nginx/default.conf" 
           target: "~/app/" 
           script: | 
-            sudo docker pull ayztuva/yamdb
-            sudo docker stop $(sudo docker ps -a -q)
             cd ~/deploy/yamdb/
-            docker-compose up
+            docker-compose down
+            sudo docker pull ayztuva/yamdb
+            docker-compose up 
    
   send_message: 
     name: Sending results to Telegram Bot 
