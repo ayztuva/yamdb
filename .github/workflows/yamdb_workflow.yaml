@@ -72,7 +72,7 @@ jobs:
             cd ~/deploy/yamdb/
             docker-compose down
             sudo docker pull ayztuva/yamdb
-            docker-compose up 
+            docker-compose up -d
    
   send_message: 
     name: Sending results to Telegram Bot 
