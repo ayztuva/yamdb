@@ -34,9 +34,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    'web',
+    "localhost",
+    "127.0.0.1",
+    "[::1]",
+    "testserver",
 ]
 
 
@@ -93,12 +94,8 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
