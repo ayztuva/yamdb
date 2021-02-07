@@ -12,11 +12,12 @@ __pycache__/
 .AppleDouble
 .LSOverride
 .vscode
+.env
 
 *.sublime-project
 *.sublime-workspace
 
-static/
-posts/static/
+static/*
+!static/.gitkeep
 
 db.sqlite3
