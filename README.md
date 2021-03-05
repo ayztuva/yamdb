@@ -29,7 +29,7 @@ sudo systemctl enable docker
 
 ### Installing and deployment
 
-In project directory you need to make dot-env file with next variables:
+In project directory you need to create dot-env file with next variables:
 
 ```
 DB_ENGINE=django.db.backends.postgresql
@@ -59,16 +59,18 @@ The project ('web') in 'service' should look like this:
       - ./.env
 ```
 
-Than just simply start the docker-compose:
+Than just run docker-compose:
 
 ```
 docker-compose up
 ```
 
-Now check http://127.0.0.1:8000/
+Now check http://127.0.0.1/
 
 ## Authors
 
-* **Evan Gribov** - *Initial work* - [ayztuva](https://github.com/ayztuva)
+* **Evan Gribov** - [ayztuva](https://github.com/ayztuva)
+* **Anton Shishlin** - [dzanto](https://github.com/dzanto)
+* **Konstantin Malov** - [zerobubus](https://github.com/zerobubus)
 
 
