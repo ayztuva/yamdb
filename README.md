@@ -1,7 +1,8 @@
 # Yamdb
 ![example workflow name](https://github.com/ayztuva/yamdb_final/workflows/CI/badge.svg)
 
-Yamdb is literally clear Yatube API
+Web service API which allows making movies, books and music reviews.
+The service collects user reviews about items in next categories: "Books", "Films", "Music". Once posted, users can leave comments and rate posted reviews. 
 
 ## Getting Started
 
