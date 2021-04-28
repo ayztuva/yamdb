@@ -1,5 +1,5 @@
 # Yamdb
-![example workflow name](https://github.com/ayztuva/yamdb_final/workflows/CI/badge.svg)
+![example workflow name](https://github.com/yamdb/yamdb_final/workflows/Yamdb%20CI/badge.svg)
 
 Yamdb is literally clear Yatube API
 
@@ -69,7 +69,7 @@ Now check http://127.0.0.1/
 
 ## Authors
 
-* **Evan Gribov** - [ayztuva](https://github.com/ayztuva)
+* **Evan Vilagov** - [vilagov](https://github.com/vilagov)
 * **Anton Shishlin** - [dzanto](https://github.com/dzanto)
 * **Konstantin Malov** - [zerobubus](https://github.com/zerobubus)
 

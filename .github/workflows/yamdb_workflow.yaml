@@ -1,4 +1,4 @@
-name: CI 
+name: Yamdb CI 
  
 on: [push] 
  
@@ -50,7 +50,7 @@ jobs:
         uses: docker/build-push-action@v2 
         with: 
           push: true 
-          tags: ayztuva/yamdb:latest 
+          tags: vilagov/yamdb:latest 
  
   deploy: 
     name: Deploing the project 
@@ -71,7 +71,7 @@ jobs:
           script: | 
             cd ~/deploy/yamdb/
             docker-compose down
-            sudo docker pull ayztuva/yamdb
+            sudo docker pull vilagov/yamdb
             docker-compose up -d
    
   send_message: 
