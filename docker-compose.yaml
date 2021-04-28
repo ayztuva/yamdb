@@ -14,7 +14,7 @@ services:
       - .env
   
   web:
-    image: ayztuva/yamdb
+    image: vilagov/yamdb
     volumes:
       - staticfiles:/code/static
       - mediafiles:/code/media

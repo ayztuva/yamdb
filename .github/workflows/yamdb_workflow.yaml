@@ -2,12 +2,12 @@ name: Yamdb CI
  
 on: [push] 
  
-jobs: 
-  tests: 
-    name: Run project test 
-    runs-on: ubuntu-latest 
+jobs:
+  tests:
+    name: Run flake8
+    runs-on: ubuntu-latest
  
-    steps: 
+    steps:
     - name: Check out the repo  
       uses: actions/checkout@v2 
  
@@ -23,10 +23,7 @@ jobs:
         pip install -r requirements.txt 
  
     - name: Lint with flake8 
-      run: flake8 . 
- 
-    - name: Pytest 
-      run: pytest 
+      run: flake8 .
    
   build_and_push_to_docker_hub: 
     name: Push Docker image to Docker Hub 
@@ -49,7 +46,7 @@ jobs:
       - name: Push to Docker Hub 
         uses: docker/build-push-action@v2 
         with: 
-          push: true 
+          push: true
           tags: vilagov/yamdb:latest 
  
   deploy: 

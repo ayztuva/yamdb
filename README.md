@@ -1,7 +1,8 @@
 # Yamdb
 ![example workflow name](https://github.com/yamdb/yamdb_final/workflows/Yamdb%20CI/badge.svg)
 
-Yamdb is literally clear Yatube API
+Web service API which allows making movies, books and music reviews.
+The service collects user reviews about items in next categories: "Books", "Films", "Music". Once posted, users can leave comments and rate posted reviews. 
 
 ## Getting Started
 
@@ -48,7 +49,7 @@ The project ('web') in 'service' should look like this:
   ...
 
   web:
-    image: ayztuva/yamdb:v0.1
+    image: vilagov/yamdb:v0.1
     volumes:
       - staticfiles:/code/static
     ports:
