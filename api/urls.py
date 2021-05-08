@@ -2,6 +2,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from api import views
 
+
 router = DefaultRouter()
 router.register('titles', views.TitleViewSet)
 router.register(
@@ -12,8 +13,10 @@ router.register(
     'titles/(?P<id>\d+)/reviews',
     views.ReviewViewSet, basename='perform_create_reviews'
 )
-router.register('categories', views.CategoryViewSet,
-                basename='list_create_categories')
+router.register(
+    'categories', views.CategoryViewSet,
+    basename='list_create_categories'
+)
 router.register('genres', views.GenreViewSet, basename='list_create_genres')
 
 urlpatterns = [
