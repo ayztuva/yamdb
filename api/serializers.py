@@ -8,9 +8,7 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ['name', 'slug']
         model = Category
         lookup_field = 'slug'
-        extra_kwargs = {
-            'url': {'lookup_field': 'slug'}
-        }
+        extra_kwargs = {'url': {'lookup_field': 'slug'}}
 
 
 class GenreSerializer(serializers.ModelSerializer):
@@ -18,9 +16,7 @@ class GenreSerializer(serializers.ModelSerializer):
         fields = ['name', 'slug']
         model = Genre
         lookup_field = 'slug'
-        extra_kwargs = {
-            'url': {'lookup_field': 'slug'}
-        }
+        extra_kwargs = {'url': {'lookup_field': 'slug'}}
 
 
 class TitleWriteSerializer(serializers.ModelSerializer):
@@ -31,7 +27,6 @@ class TitleWriteSerializer(serializers.ModelSerializer):
     genre = serializers.SlugRelatedField(
         queryset=Genre.objects.all(),
         slug_field='slug', many=True
-
     )
 
     class Meta:
@@ -71,13 +66,15 @@ class ReviewSerializer(serializers.ModelSerializer):
         many=False,
         read_only=True,
         slug_field='name',
-
     )
-
     author = serializers.SlugRelatedField(
         slug_field='username', read_only=True,
         default=serializers.CurrentUserDefault()
     )
+
+    class Meta:
+        fields = ('id', 'text', 'score', 'title', 'author', 'pub_date')
+        model = Review
 
     def validate(self, data):
         title = self.context['request'].parser_context['kwargs']['id']
@@ -89,10 +86,6 @@ class ReviewSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError(message)
             return data
         return data
-
-    class Meta:
-        fields = ('id', 'text', 'score', 'title', 'author', 'pub_date')
-        model = Review
 
 
 class UserSerializer(serializers.ModelSerializer):

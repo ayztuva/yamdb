@@ -10,22 +10,22 @@ class Category(models.Model):
     name = models.CharField(max_length=200, verbose_name='Name')
     slug = models.CharField(max_length=200, unique=True)
 
-    def __str__(self):
-        return self.slug
-
     class Meta:
         ordering = ['-id']
+
+    def __str__(self):
+        return self.slug
 
 
 class Genre(models.Model):
     name = models.CharField(max_length=200, verbose_name='Name')
     slug = models.CharField(max_length=200, unique=True)
 
-    def __str__(self):
-        return self.slug
-
     class Meta:
         ordering = ['-id']
+
+    def __str__(self):
+        return self.slug
 
 
 class Title(models.Model):
@@ -46,18 +46,20 @@ class Title(models.Model):
         verbose_name='Category'
     )
 
-    def __str__(self):
-        return self.name
-
     class Meta:
         ordering = ['-id']
+
+    def __str__(self):
+        return self.name
 
 
 class Review(models.Model):
     text = models.TextField()
     score = models.PositiveIntegerField(
-        validators=[MinValueValidator(0),
-                    MaxValueValidator(10, message="cool")]
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(10, message="cool")
+        ]
     )
     title = models.ForeignKey(
         Title, blank=True, on_delete=models.CASCADE,
@@ -84,5 +86,4 @@ class Comment(models.Model):
     )
     text = models.TextField()
     pub_date = models.DateTimeField(
-        "Дата добавления", auto_now_add=True, db_index=True
-    )
+        "Дата добавления", auto_now_add=True, db_index=True)
