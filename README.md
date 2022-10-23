@@ -87,7 +87,7 @@ macOS High Sierra 10.13.6 or higher
 * [PostgreSQL](https://www.postgresql.org/)
 
 ## Authors
-* **Evan Vilagov** - [vilagov](https://github.com/vilagov)
+* **Evan Vesmirov** - [vesmirov](https://github.com/vesmirov)
 * **Anton Shishlin** - [dzanto](https://github.com/dzanto)
 * **Konstantin Malov** - [zerobubus](https://github.com/zerobubus)
 
