@@ -1,5 +1,5 @@
 # Yamdb
-![Yamdb CI](https://github.com/vilagov/yamdb/workflows/Yamdb%20CI/badge.svg)
+![Yamdb CI](https://github.com/vesmirov/yamdb/workflows/Yamdb%20CI/badge.svg)
 
 ## Description
 Web service API which allows making movies, books and music reviews.
@@ -45,7 +45,7 @@ The project ('web') in 'service' should look like this:
   ...
 
   web:
-    image: vilagov/yamdb:v0.1
+    image: name/yamdb:v0.1
     volumes:
       - staticfiles:/code/static
     ports:
@@ -61,7 +61,7 @@ Don't forget to add correspnding command to docker-compose.yaml file by replacin
 
 ```
   web:
-    image: vilagov/yamdb:v0.1
+    image: name/yamdb:v0.1
     ...
 ```
 
